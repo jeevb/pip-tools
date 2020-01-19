@@ -34,6 +34,7 @@ class RequirementSummary(object):
         self.key = key_from_req(ireq.req)
         self.extras = str(sorted(ireq.extras))
         self.specifier = str(ireq.specifier)
+        self.constraint = str(ireq.constraint)
 
     def __eq__(self, other):
         return str(self) == str(other)
@@ -42,7 +43,7 @@ class RequirementSummary(object):
         return hash(str(self))
 
     def __str__(self):
-        return repr([self.key, self.specifier, self.extras])
+        return repr([self.key, self.specifier, self.extras, self.constraint])
 
 
 def combine_install_requirements(ireqs):
