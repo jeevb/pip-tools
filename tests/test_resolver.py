@@ -172,6 +172,7 @@ from piptools.resolver import combine_install_requirements
                     "pytz==2016.4 (from celery==4.0.2)",
                 ],
             ),
+            # Check that dependencies of relevant constraints are resolved
             (
                 ["aiohttp", ("yarl==1.4.2", True)],
                 [
